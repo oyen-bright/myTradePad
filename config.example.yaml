@@ -1,0 +1,17 @@
+server:
+  port: ""
+  mode: ""
+
+database:
+  host: ""
+  port: ""
+  user: ""
+  password: ""
+  dbname: ""
+  sslmode: ""
+
+redis:
+  host: ""
+  port: ""
+  password: ""
+  db: 0
