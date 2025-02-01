@@ -3,21 +3,25 @@ package main
 import (
 	"log"
 
+	"github.com/oyen-bright/MyTradePad/backend/database"
 	"github.com/oyen-bright/MyTradePad/config"
 )
-
-// var (
-// 	db *gorm.DB
-// )
 
 func main() {
 	// Load configuration
 	cfg, err := config.LoadConfig()
 
-	log.Print(cfg)
+	if err != nil {
+		panic(err)
+	}
+
+	// Setup database connection
+	db, err := database.Init(&cfg.Database)
 
 	if err != nil {
-		log.Fatalf("Failed to load configuration: %v", err)
+		panic(err)
 	}
+
+	log.Print(db)
 
 }
